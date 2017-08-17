@@ -25,6 +25,7 @@ all_places = [
     (40, "Arbat"),
     (40, "Myata"),
     (15, "Lido"),
+    (10, "Comedia"),
     (5, "Shaverma"),
 ]
 
