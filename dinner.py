@@ -26,7 +26,11 @@ def main():
     all_places = {
         'Litwiny': 40,
         'Terra pizza': 40,
-        'Arena city': 20
+        'Arena city': 20,
+        'Tokiny (AC)': 20,
+        'Zamok': 80,
+        'Ronin (delivery)': 10,
+        'Tokiny (delivery)': 10
     }
 
     print(select(all_places))
