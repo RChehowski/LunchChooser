@@ -1,14 +1,16 @@
 #!/usr/bin/env python
 
 import random
+import yaml
+
 from functools import reduce
 
 
 def gen(places: dict):
-    accumulator = 0
+    acc = 0
     for k, v in places.items():
-        accumulator += v
-        yield (k, (accumulator - v, accumulator))
+        acc += v
+        yield (k, (acc - v, acc))
 
 
 def select(places: dict):
@@ -23,17 +25,9 @@ def select(places: dict):
 
 
 def main():
-    all_places = {
-        'Litwiny': 40,
-        'Terra pizza': 40,
-        'Arena city': 20,
-        'Tokiny (AC)': 20,
-        'Zamok': 80,
-        'Ronin (delivery)': 10,
-        'Tokiny (delivery)': 10
-    }
-
-    print(select(all_places))
+    with open('places.yml') as stream:
+        places = yaml.load(stream)
+        print(select(places))
 
 
 if __name__ == '__main__':
